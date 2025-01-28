@@ -42,7 +42,7 @@ function App() {
     e.preventDefault();
     console.log(formData);
     try{
-      const response = await fetch('http://localhost:3000/hotels', {
+      const response = await fetch('https://hotel-backend-project-ten.vercel.app/hotels', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
