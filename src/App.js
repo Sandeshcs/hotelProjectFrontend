@@ -7,26 +7,26 @@ function App() {
   name: "",
   category: "",
   location: "",
-  rating: "",
+  rating: 0,
   website: "",
   phoneNumber: "",
   checkInTime: "",
   checkOutTime: "",
   amenities: "",
   priceRange: "",
-  reservationsNeeded: "",
-  isParkingAvailable: "",
-  isWifiAvailable: "",
-  isPoolAvailable: "",
-  isSpaAvailable: "",
-  isRestaurantAvailable: "",
+  reservationsNeeded: false,
+  isParkingAvailable: false,
+  isWifiAvailable: false,
+  isPoolAvailable: false,
+  isSpaAvailable: false,
+  isRestaurantAvailable: false,
   photos: ""
   });
   
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormData((prevData) => ({
-     ...prevData, [name]: name === "rating"?parseInt(value):value 
+     ...prevData, [name]: value 
     }));
   }
 
@@ -81,7 +81,7 @@ function App() {
         <input type='text' name="location" value={formData.location} onChange={handleChange}/><br/><br/>
 
         <label>Rating:</label><br/>
-        <input type='text' name="rating" value={formData.rating} onChange={handleChange}/><br/><br/>
+        <input type='number' name="rating" value={formData.rating} onChange={handleChange}/><br/><br/>
 
         <label>Website:</label><br/>
         <input type='text' name="website" value={formData.website} onChange={handleChange}/><br/><br/>
